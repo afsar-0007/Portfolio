@@ -896,134 +896,161 @@ textarea {
 /* =========================================================
    SKILLS
 ========================================================= */
+/* ==================== SKILLS SECTION ==================== */
 
 .skills {
-    background:
-        linear-gradient(
-            135deg,
-            #f1f5ff,
-            #ecfeff
-        );
+    background: linear-gradient(
+        135deg,
+        #f1f5ff,
+        #ecfeff
+    );
 }
+
+
+/* Skills container */
 
 .skills__container {
     max-width: 1100px;
-
     margin: auto;
 
     display: grid;
+    grid-template-columns: 1fr;
 
-    grid-template-columns: 1fr 0.8fr;
-
-    gap: 80px;
-
-    align-items: center;
+    gap: 40px;
 }
 
 
-/* Skill */
+/* Skills content */
 
-.skill {
-    margin-bottom: 25px;
+.skills__content {
+    width: 100%;
 }
 
-.skill__info {
-    display: flex;
-
-    justify-content: space-between;
-
-    margin-bottom: 8px;
-}
-
-.skill__info span {
+.skills__content h3 {
     color: var(--dark);
 
-    font-size: 0.9rem;
+    font-size: 1.5rem;
+
+    margin-bottom: 30px;
+}
+
+
+/* Skills list */
+
+.skills__list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+/* Individual skill category */
+
+.skills__item {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 20px 24px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border: 1px solid rgba(148, 163, 184, 0.2);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* Hover effect */
+
+.skills__item:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(99, 102, 241, 0.25);
+
+    box-shadow:
+        0 12px 30px rgba(15, 23, 42, 0.10);
+}
+
+
+/* Category title */
+
+.skills__item h4 {
+    min-width: 150px;
+
+    margin: 0;
+
+    color: var(--primary);
+
+    font-size: 0.95rem;
 
     font-weight: 700;
 }
 
-.skill__info span:last-child {
-    color: var(--primary);
+
+/* Skills text */
+
+.skills__item p {
+    margin: 0;
+
+    color: var(--dark);
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+
+    font-weight: 500;
 }
 
 
-/* Skill track */
+/* ==================== RESPONSIVE ==================== */
 
-.skill__track {
-    width: 100%;
+@media screen and (max-width: 768px) {
 
-    height: 9px;
+    .skills__container {
+        grid-template-columns: 1fr;
 
-    border-radius: 20px;
+        gap: 30px;
+    }
 
-    background: #dbe4f0;
+    .skills__item {
+        flex-direction: column;
 
-    overflow: hidden;
-}
+        gap: 8px;
 
-.skill__bar {
-    height: 100%;
+        padding: 18px 20px;
+    }
 
-    width: 0;
+    .skills__item h4 {
+        min-width: auto;
+    }
 
-    border-radius: 20px;
-
-    background: var(--gradient);
-
-    position: relative;
-
-    transition:
-        width 1.5s ease;
-}
-
-.skill__bar::after {
-    content: "";
-
-    position: absolute;
-
-    right: 0;
-
-    top: 0;
-
-    width: 25px;
-
-    height: 100%;
-
-    background:
-        rgba(255, 255, 255, 0.35);
-
-    filter: blur(5px);
 }
 
 
-/* Skills image */
+@media screen and (max-width: 480px) {
 
-.skills__content img,
-.skills__image img {
-    width: 100%;
+    .skills__item {
+        padding: 16px 18px;
+    }
 
-    max-width: 400px;
+    .skills__item p {
+        font-size: 0.9rem;
 
-    margin: auto;
+        line-height: 1.6;
+    }
 
-    filter:
-        drop-shadow(
-            0 20px 30px
-            rgba(99, 102, 241, 0.15)
-        );
-
-    transition: var(--transition);
 }
-
-.skills__content img:hover,
-.skills__image img:hover {
-    transform:
-        translateY(-10px)
-        scale(1.03);
-}
-
-
 /* =========================================================
    PROJECTS
 ========================================================= */
